@@ -13,7 +13,12 @@ const places = {
   hotel: { name: "HOTEL Lumia HAKATA", lat: 33.5964, lng: 130.4078, note: "五晚連住基地" },
   nakasu: { name: "中洲／川端通", lat: 33.5934, lng: 130.4054, note: "屋台與夜散策" },
   canalCity: { name: "博多運河城", lat: 33.5897, lng: 130.411, note: "輕鬆採購" },
-  balloonSaga: { name: "バルーンさが", lat: 33.2648, lng: 130.2702, note: "佐賀熱氣球節會場" },
+  balloonSaga: {
+    name: "バルーンさが（臨時站）",
+    lat: 33.2578,
+    lng: 130.249,
+    note: "嘉瀬川河川敷・會場旁；節慶期間才營業",
+  },
   yanagawa: { name: "柳川松月碼頭", lat: 33.1635, lng: 130.4058, note: "川下り遊船" },
   dazaifu: { name: "太宰府天滿宮", lat: 33.5214, lng: 130.5348, note: "參道與梅枝餅" },
   karatsu: { name: "唐津", lat: 33.4504, lng: 129.9688, note: "曳山祭宵ヤマ" },
@@ -39,7 +44,7 @@ const routeMeta = {
     caption: "Day 1：福岡機場 → 飯店 → 中洲／川端通早期夜散策。",
   },
   day2: {
-    caption: "Day 2：博多 → 佐賀熱氣球會場（往返）→ 運河城。",
+    caption: "Day 2：博多 → 佐賀 → バルーンさが臨時站（嘉瀬川會場旁，步行約 1 分）→ 返回運河城。",
   },
   day3: {
     caption: "Day 3：天神／博多 → 柳川 → 太宰府 → 返回市區。",
