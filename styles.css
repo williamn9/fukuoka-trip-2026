@@ -558,6 +558,63 @@ a {
   font-weight: 700;
 }
 
+.prep {
+  background: linear-gradient(180deg, transparent, rgba(74, 109, 130, 0.06) 40%, transparent);
+}
+
+.prep-block {
+  padding: 1.25rem 0 0.35rem;
+  border-top: 1px solid var(--line);
+}
+
+.prep-block h3 {
+  margin: 0 0 0.65rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.prep-block > p {
+  margin: 0 0 0.75rem;
+  color: var(--ink-soft);
+}
+
+.prep-list {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--ink-soft);
+}
+
+.prep-list li + li {
+  margin-top: 0.45rem;
+}
+
+.prep-list strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.prep-check {
+  list-style: none;
+  padding-left: 0;
+}
+
+.prep-check li {
+  position: relative;
+  padding-left: 1.55rem;
+}
+
+.prep-check li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.35rem;
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 1.5px solid rgba(21, 32, 43, 0.35);
+  border-radius: 0.15rem;
+}
+
 .tips .tip-list,
 .booking-list {
   list-style: none;
