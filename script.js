@@ -23,7 +23,13 @@ const places = {
   dazaifu: { name: "太宰府天滿宮", lat: 33.5214, lng: 130.5348, note: "參道與梅枝餅" },
   karatsu: { name: "唐津", lat: 33.4504, lng: 129.9688, note: "曳山祭宵ヤマ" },
   ohori: { name: "大濠公園", lat: 33.586, lng: 130.3794, note: "湖畔漫步" },
-  tenjin: { name: "天神", lat: 33.5902, lng: 130.4017, note: "地下街與伴手禮" },
+  tenjin: { name: "天神", lat: 33.5902, lng: 130.4017, note: "地下街、伴手禮、レトロ遊戲店" },
+  mandarake: {
+    name: "Mandarake 福岡",
+    lat: 33.5895,
+    lng: 130.3945,
+    note: "大名・1F 遊戲區",
+  },
 };
 
 const shortLabels = {
@@ -37,6 +43,7 @@ const shortLabels = {
   karatsu: "唐津",
   ohori: "大濠",
   tenjin: "天神",
+  mandarake: "萬代",
 };
 
 const routeMeta = {
@@ -53,7 +60,7 @@ const routeMeta = {
     caption: "Day 4：中洲川端直達唐津，夜間宵ヤマ後返回博多。",
   },
   day5: {
-    caption: "Day 5：大濠公園晨走 → 天神地下街與慶祝晚餐。",
+    caption: "Day 5：大濠公園 → 天神／大名レトロ遊戲店 → 和牛慶祝晚餐。",
   },
   day6: {
     caption: "Day 6：飯店退房，計程車直達福岡機場返港。",
@@ -83,8 +90,8 @@ const routes = {
   },
   day5: {
     color: "#3d6b7a",
-    path: ["hotel", "ohori", "tenjin"],
-    markers: ["hotel", "ohori", "tenjin"],
+    path: ["hotel", "ohori", "tenjin", "mandarake", "hotel"],
+    markers: ["hotel", "ohori", "tenjin", "mandarake"],
   },
   day6: {
     color: "#5c6f7d",
