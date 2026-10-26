@@ -51,16 +51,16 @@ const routeMeta = {
     caption: "Day 1：福岡機場 → 飯店 → 中洲／川端通早期夜散策。",
   },
   day2: {
-    caption: "Day 2：博多 → 佐賀 → バルーンさが臨時站（嘉瀬川會場旁，步行約 1 分）→ 返回運河城。",
+    caption: "Day 2：天神 → 柳川川下り → 返回博多用水炊き晚餐。",
   },
   day3: {
-    caption: "Day 3：天神／博多 → 柳川 → 太宰府 → 返回市區。",
+    caption: "Day 3：太宰府 → 大濠公園 → 天神／大名レトロ遊戲。",
   },
   day4: {
     caption: "Day 4：中洲川端直達唐津，夜間宵ヤマ後返回博多。",
   },
   day5: {
-    caption: "Day 5：大濠公園 → 天神／大名レトロ遊戲店 → 和牛慶祝晚餐。",
+    caption: "Day 5：博多 → 佐賀バルーンさが（較晚出發）→ 返回和牛慶祝晚餐。",
   },
   day6: {
     caption: "Day 6：飯店退房，計程車直達福岡機場返港。",
@@ -75,13 +75,13 @@ const routes = {
   },
   day2: {
     color: "#b86a2e",
-    path: ["hotel", "balloonSaga", "hotel", "canalCity"],
-    markers: ["hotel", "balloonSaga", "canalCity"],
+    path: ["tenjin", "yanagawa", "hotel"],
+    markers: ["tenjin", "yanagawa", "hotel"],
   },
   day3: {
     color: "#2f4a5c",
-    path: ["tenjin", "yanagawa", "dazaifu", "hotel"],
-    markers: ["tenjin", "yanagawa", "dazaifu", "hotel"],
+    path: ["hotel", "dazaifu", "ohori", "tenjin", "mandarake", "hotel"],
+    markers: ["hotel", "dazaifu", "ohori", "tenjin", "mandarake"],
   },
   day4: {
     color: "#8a4f2a",
@@ -90,8 +90,8 @@ const routes = {
   },
   day5: {
     color: "#3d6b7a",
-    path: ["hotel", "ohori", "tenjin", "mandarake", "hotel"],
-    markers: ["hotel", "ohori", "tenjin", "mandarake"],
+    path: ["hotel", "balloonSaga", "hotel", "canalCity"],
+    markers: ["hotel", "balloonSaga", "canalCity"],
   },
   day6: {
     color: "#5c6f7d",
