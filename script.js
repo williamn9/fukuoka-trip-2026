@@ -35,13 +35,25 @@ const places = {
     name: "西鐵福岡（天神）駅",
     lat: 33.5902,
     lng: 130.4017,
-    note: "西鐵特急／地下街・レトロ遊戲",
+    note: "西鐵特急／地下街",
+  },
+  bookoff: {
+    name: "BOOKOFF ミーナ天神",
+    lat: 33.5918,
+    lng: 130.3998,
+    note: "天神4丁目・7F・レトロ遊戲／二手",
+  },
+  cultureArts: {
+    name: "Culture Arts",
+    lat: 33.593,
+    lng: 130.3992,
+    note: "天神3丁目・スコーレ第二天神 306・レトロ遊戲",
   },
   mandarake: {
     name: "Mandarake 福岡",
     lat: 33.5895,
     lng: 130.3945,
-    note: "大名・1F 遊戲區",
+    note: "大名・1F 遊戲區・レトロ遊戲",
   },
 };
 
@@ -59,6 +71,8 @@ const shortLabels = {
   karatsu: "唐津",
   ohori: "大濠",
   tenjin: "天神",
+  bookoff: "BO",
+  cultureArts: "CA",
   mandarake: "萬代",
 };
 
@@ -79,7 +93,7 @@ const routeMeta = {
     caption: "10/31：飯店 → 西鐵天神站 → 柳川 → 返回飯店用水炊き。",
   },
   day3: {
-    caption: "11/1：飯店 → 天神轉乘 → 太宰府 → 大濠 → 天神／大名。",
+    caption: "11/1：飯店 → 天神轉乘 → 太宰府 → 大濠 → レトロ遊戲三店（BO／CA／萬代）。",
   },
   day4: {
     caption: "11/2：飯店 → 中洲川端駅 → 唐津宵ヤマ → 返回飯店。",
@@ -105,8 +119,18 @@ const routes = {
   },
   day3: {
     color: "#2f4a5c",
-    path: ["hotel", "tenjin", "dazaifu", "ohori", "tenjin", "mandarake", "hotel"],
-    markers: ["hotel", "tenjin", "dazaifu", "ohori", "mandarake"],
+    path: [
+      "hotel",
+      "tenjin",
+      "dazaifu",
+      "ohori",
+      "tenjin",
+      "bookoff",
+      "cultureArts",
+      "mandarake",
+      "hotel",
+    ],
+    markers: ["hotel", "tenjin", "dazaifu", "ohori", "bookoff", "cultureArts", "mandarake"],
   },
   day4: {
     color: "#8a4f2a",
