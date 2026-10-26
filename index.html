@@ -13,22 +13,15 @@
 <body>
   <header class="site-header">
     <a class="logo" href="#top">福岡 · 2026</a>
-    <div class="header-navs">
-      <nav class="nav" aria-label="主要導覽">
-        <a href="#overview">總覽</a>
-        <a href="#prep">準備</a>
-        <a href="#flights">航班</a>
-        <a href="#tips">貼士</a>
-      </nav>
-      <nav class="day-nav" role="tablist" aria-label="每日行程">
-        <button type="button" class="day-tab is-active" role="tab" id="tab-day1" aria-controls="panel-day1" aria-selected="true" data-day="day1">Day 1</button>
-        <button type="button" class="day-tab" role="tab" id="tab-day2" aria-controls="panel-day2" aria-selected="false" data-day="day2">Day 2</button>
-        <button type="button" class="day-tab" role="tab" id="tab-day3" aria-controls="panel-day3" aria-selected="false" data-day="day3">Day 3</button>
-        <button type="button" class="day-tab" role="tab" id="tab-day4" aria-controls="panel-day4" aria-selected="false" data-day="day4">Day 4</button>
-        <button type="button" class="day-tab" role="tab" id="tab-day5" aria-controls="panel-day5" aria-selected="false" data-day="day5">Day 5</button>
-        <button type="button" class="day-tab" role="tab" id="tab-day6" aria-controls="panel-day6" aria-selected="false" data-day="day6">Day 6</button>
-      </nav>
-    </div>
+    <nav class="day-nav" role="tablist" aria-label="行程導覽">
+      <button type="button" class="day-tab" role="tab" id="tab-info" aria-controls="panel-info" aria-selected="false" data-day="info">總覽</button>
+      <button type="button" class="day-tab is-active" role="tab" id="tab-day1" aria-controls="panel-day1" aria-selected="true" data-day="day1">10/30</button>
+      <button type="button" class="day-tab" role="tab" id="tab-day2" aria-controls="panel-day2" aria-selected="false" data-day="day2">10/31</button>
+      <button type="button" class="day-tab" role="tab" id="tab-day3" aria-controls="panel-day3" aria-selected="false" data-day="day3">11/1</button>
+      <button type="button" class="day-tab" role="tab" id="tab-day4" aria-controls="panel-day4" aria-selected="false" data-day="day4">11/2</button>
+      <button type="button" class="day-tab" role="tab" id="tab-day5" aria-controls="panel-day5" aria-selected="false" data-day="day5">11/3</button>
+      <button type="button" class="day-tab" role="tab" id="tab-day6" aria-controls="panel-day6" aria-selected="false" data-day="day6">11/4</button>
+    </nav>
   </header>
 
   <main id="top">
@@ -40,77 +33,151 @@
         <p class="lede">六天五夜，與媽媽、哥哥一起走訪熱氣球、水鄉與曳山祭。</p>
         <div class="cta-group">
           <a class="btn btn-primary" href="#days">選擇每日行程</a>
-          <a class="btn btn-ghost" href="#overview">行程總覽</a>
+          <a class="btn btn-ghost" href="#info" data-select-day="info">行程資訊</a>
         </div>
-      </div>
-    </section>
-
-    <section id="overview" class="section overview">
-      <div class="section-inner">
-        <h2>行程總覽</h2>
-        <p class="section-lede">長輩友善節奏，五晚連住博多，免搬行李。</p>
-        <dl class="meta-grid">
-          <div>
-            <dt>旅遊日期</dt>
-            <dd>2026 年 10 月 30 日（五）– 11 月 4 日（三）</dd>
-          </div>
-          <div>
-            <dt>同行人員</dt>
-            <dd>3 人（我、媽媽 78 歲、哥哥）</dd>
-          </div>
-          <div>
-            <dt>住宿</dt>
-            <dd>HOTEL Lumia HAKATA · 5 晚連住</dd>
-          </div>
-          <div>
-            <dt>核心原則</dt>
-            <dd>舒緩平穩 · 直達優先 · 長輩友善</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-    <section id="flights" class="section logistics">
-      <div class="section-inner">
-        <h2>航班與住宿</h2>
-        <p class="section-lede">進出皆搭 HK Express，飯店鄰近中洲川端與吳服町。</p>
-
-        <div class="split">
-          <article class="log-block">
-            <h3>去程 UO668</h3>
-            <p class="time-line">10 月 30 日（五）</p>
-            <p class="route">香港 HKG T2 <span>11:05</span></p>
-            <p class="route arrow" aria-hidden="true">↓</p>
-            <p class="route">福岡 FUK 國際線 <span>15:10</span></p>
-            <p class="note">經濟飛 · Fare Class U</p>
-          </article>
-          <article class="log-block">
-            <h3>回程 UO601</h3>
-            <p class="time-line">11 月 4 日（三）</p>
-            <p class="route">福岡 FUK 國際線 <span>12:50</span></p>
-            <p class="route arrow" aria-hidden="true">↓</p>
-            <p class="route">香港 HKG T1 <span>15:50</span></p>
-            <p class="note">經濟飛 · Fare Class U</p>
-          </article>
-        </div>
-
-        <article class="hotel">
-          <h3>HOTEL Lumia HAKATA</h3>
-          <p>〒812-0024 福岡県福岡市博多区綱場町 8-29</p>
-          <p>步行數分鐘至地下鐵中洲川端站與吳服町站；計程車往返福岡機場約 15 分鐘。</p>
-        </article>
       </div>
     </section>
 
     <section id="days" class="section days">
       <div class="section-inner">
-        <h2>每日行程</h2>
-        <p class="section-lede">頂部選 Day 1–6，只顯示當日行程、路線與預約連結。</p>
+        <h2 id="days-title">每日行程</h2>
+        <p class="section-lede" id="days-lede">頂部選日期，只顯示當日行程、路線與預約連結。</p>
 
         <div class="day-panels">
+          <article class="day-panel" role="tabpanel" id="panel-info" aria-labelledby="tab-info" data-day="info" hidden>
+            <div class="info-block">
+              <h3>行程總覽</h3>
+              <p class="info-lede">長輩友善節奏，五晚連住博多，免搬行李。</p>
+              <dl class="meta-grid">
+                <div>
+                  <dt>旅遊日期</dt>
+                  <dd>2026 年 10 月 30 日（五）– 11 月 4 日（三）</dd>
+                </div>
+                <div>
+                  <dt>同行人員</dt>
+                  <dd>3 人（我、媽媽 78 歲、哥哥）</dd>
+                </div>
+                <div>
+                  <dt>住宿</dt>
+                  <dd>HOTEL Lumia HAKATA · 5 晚連住</dd>
+                </div>
+                <div>
+                  <dt>核心原則</dt>
+                  <dd>舒緩平穩 · 直達優先 · 長輩友善</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="info-block logistics">
+              <h3>航班與住宿</h3>
+              <p class="info-lede">進出皆搭 HK Express，飯店鄰近中洲川端與吳服町。</p>
+
+              <div class="split">
+                <article class="log-block">
+                  <h4>去程 UO668</h4>
+                  <p class="time-line">10 月 30 日（五）</p>
+                  <p class="route">香港 HKG T2 <span>11:05</span></p>
+                  <p class="route arrow" aria-hidden="true">↓</p>
+                  <p class="route">福岡 FUK 國際線 <span>15:10</span></p>
+                  <p class="note">經濟飛 · Fare Class U</p>
+                </article>
+                <article class="log-block">
+                  <h4>回程 UO601</h4>
+                  <p class="time-line">11 月 4 日（三）</p>
+                  <p class="route">福岡 FUK 國際線 <span>12:50</span></p>
+                  <p class="route arrow" aria-hidden="true">↓</p>
+                  <p class="route">香港 HKG T1 <span>15:50</span></p>
+                  <p class="note">經濟飛 · Fare Class U</p>
+                </article>
+              </div>
+
+              <article class="hotel">
+                <h4>HOTEL Lumia HAKATA</h4>
+                <p>〒812-0024 福岡県福岡市博多区綱場町 8-29</p>
+                <p>步行數分鐘至地下鐵中洲川端站與吳服町站；計程車往返福岡機場約 15 分鐘。</p>
+              </article>
+            </div>
+
+            <div class="info-block">
+              <h3>出發準備</h3>
+              <p class="info-lede">10 月底至 11 月初福岡天氣與行李清單（含長輩友善提醒）。</p>
+
+              <div class="prep-block">
+                <h4>氣溫大概多少？</h4>
+                <p>行程落在晚秋交界，平年約：</p>
+                <ul class="prep-list">
+                  <li><strong>10 月底（10/30–10/31）</strong>：白天約 <strong>20–23°C</strong>，早晚約 <strong>13–16°C</strong></li>
+                  <li><strong>11 月初（11/1–11/4）</strong>：白天約 <strong>18–21°C</strong>，早晚約 <strong>11–14°C</strong></li>
+                  <li><strong>11/3 熱氣球</strong>：河畔會場較涼、有風，體感可到約 <strong>10–14°C</strong>，務必多穿一層</li>
+                  <li>約每 3 天有 1 天左右可能下雨；出發前 2–3 天再看一次天氣預報</li>
+                </ul>
+              </div>
+
+              <div class="prep-block">
+                <h4>穿什麼／帶什麼</h4>
+                <ul class="prep-list">
+                  <li><strong>疊穿為主</strong>：長袖／薄毛衣＋可脫的外套（風衣、薄羽絨或外套一件）</li>
+                  <li><strong>長褲</strong>：市區與近郊步行都適合；避免只靠短褲</li>
+                  <li><strong>舒適步行鞋</strong>：柳川上下船、太宰府參道、唐津夜間站立都要走</li>
+                  <li><strong>摺疊雨傘或薄雨衣</strong>：一人一把最穩</li>
+                  <li><strong>薄圍巾／頸巾</strong>：給媽媽與 10/31 清晨用</li>
+                  <li><strong>小型背包</strong>：白天裝外套、水、藥、備用電池</li>
+                </ul>
+              </div>
+
+              <div class="prep-block">
+                <h4>行程專用小物</h4>
+                <ul class="prep-list">
+                  <li><strong>10/31 川下り</strong>：薄外套（水上較涼）；預約確認截圖</li>
+                  <li><strong>11/3 熱氣球</strong>：保暖層、帽子或耳罩、行動電源；會場空曠，可帶輕便坐墊（選配）</li>
+                  <li><strong>11/2 宵ヤマ</strong>：夜間站立圍觀，多一件外套；預留茶室休息時間</li>
+                  <li><strong>藥品</strong>：常用藥、腸胃藥、膠布；長輩多備一件薄外套禦寒</li>
+                  <li><strong>證件與票務</strong>：護照、JR／船預約確認、餐廳訂位、信用卡＋約 ¥40,000–50,000 現金</li>
+                  <li><strong>插頭</strong>：日本是 A 型兩腳扁插，電壓 100V；港產電器多數可直用（注意變壓器需求）</li>
+                </ul>
+              </div>
+
+              <div class="prep-block">
+                <h4>出發前 checklist</h4>
+                <ul class="prep-list prep-check">
+                  <li>10/31 柳川川下り 10:40 班預約</li>
+                  <li>10/31 水炊き、11/3 和牛餐廳預約</li>
+                  <li>11/3 JR 特急（博多↔佐賀）網上劃位</li>
+                  <li>下載 GO／DiDi（叫車）、離線地圖或 NAVITIME</li>
+                  <li>確認飯店地址日文：福岡市博多区綱場町 8-29 HOTEL Lumia HAKATA</li>
+                  <li>出發前再查福岡天氣預報，微調外套厚度</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="info-block tips">
+              <h3>實用小貼士</h3>
+              <p class="info-lede">現金、支付方式與出發前訂位提醒。</p>
+              <ul class="tip-list">
+                <li>
+                  <h4>建議帶多少現金</h4>
+                  <p>三人 6 天建議約 <strong>¥40,000–50,000</strong>（約 HK$2,000–2,600）。主要預留計程車、屋台、小店與備用；JR 網上票、川下り預約、水炊き／和牛、連鎖店與 Mandarake 等多可刷卡。</p>
+                  <p>若很習慣刷卡＋交通 IC，現金可減至約 <strong>¥30,000</strong>，但仍建議留現金給屋台與少數只收現的車。</p>
+                </li>
+                <li>
+                  <h4>計程車怎麼付</h4>
+                  <p>福岡多數計程車收<strong>現金</strong>、<strong>信用卡</strong>（Visa／Mastercard／JCB／Amex 等）、<strong>交通 IC</strong>（SUGOCA、nimoca、Suica 等；八達通不行），以及 PayPay／Alipay／WeChat Pay 等 QR。每台車不完全一樣，上車可問「カード大丈夫ですか？」或看車內標誌。</p>
+                  <p>機場↔飯店這類車程，大公司車刷卡較齊；仍建議備 <strong>¥3,000–5,000</strong> 現金以防萬一。用 GO／DiDi 叫車常可事先綁卡。</p>
+                </li>
+                <li>
+                  <h4>機場計程車價錢</h4>
+                  <p>單程約 ¥2,100–2,500（約 HK$105–125），三人分攤每人約 HK$35–42，比接駁＋地鐵省時約 25 分鐘，免扛行李。</p>
+                </li>
+                <li>
+                  <h4>提前劃位與訂位</h4>
+                  <p>到「每日行程」選對應日期可看到當日預約連結；10/31 水炊き與 11/3 和牛燒肉請另於網上預約餐廳。</p>
+                </li>
+              </ul>
+            </div>
+          </article>
+
           <article class="day-panel is-active" role="tabpanel" id="panel-day1" aria-labelledby="tab-day1" data-day="day1">
             <div class="day-head">
-              <span class="day-num">Day 1</span>
               <time datetime="2026-10-30">10 月 30 日 · 周五</time>
             </div>
             <h3>抵達福岡 &amp; 中洲早期夜散策</h3>
@@ -131,7 +198,6 @@
 
           <article class="day-panel" role="tabpanel" id="panel-day2" aria-labelledby="tab-day2" data-day="day2" hidden>
             <div class="day-head">
-              <span class="day-num">Day 2</span>
               <time datetime="2026-10-31">10 月 31 日 · 周六</time>
             </div>
             <h3>柳川水鄉輕舟遊 &amp; 水炊き</h3>
@@ -161,7 +227,6 @@
 
           <article class="day-panel" role="tabpanel" id="panel-day3" aria-labelledby="tab-day3" data-day="day3" hidden>
             <div class="day-head">
-              <span class="day-num">Day 3</span>
               <time datetime="2026-11-01">11 月 1 日 · 周日</time>
             </div>
             <h3>福岡市區：太宰府、大濠 &amp; レトロ遊戲</h3>
@@ -204,7 +269,6 @@
 
           <article class="day-panel" role="tabpanel" id="panel-day4" aria-labelledby="tab-day4" data-day="day4" hidden>
             <div class="day-head">
-              <span class="day-num">Day 4</span>
               <time datetime="2026-11-02">11 月 2 日 · 周一</time>
             </div>
             <h3>唐津曳山祭 · 宵ヤマ</h3>
@@ -215,22 +279,26 @@
             <ul>
               <li><strong>13:00</strong> 中洲川端搭地下鐵空港線直通 JR 筑肥線，直達唐津站（約 1 小時 25 分；一般以 IC／普通車票即可）。</li>
               <li><strong>14:30–16:30</strong> 唐津神社與曳山展示館。</li>
-              <li><strong>16:30–18:30</strong> 站周邊茶室／咖啡廳充分休息。</li>
-              <li><strong>19:30</strong> 觀賞「宵ヤマ」點燈巡遊；回程直通或姪濱轉乘備援。</li>
+              <li><strong>16:30–18:45</strong> 站周邊茶室／咖啡廳充分休息；提前到觀覽位置。</li>
+              <li><strong>19:00–21:30</strong> 觀賞「宵曳山」（宵ヤマ）點燈巡遊（2026 年起 19:00 開始，較往年早 30 分）；回程直通或姪濱轉乘備援。</li>
             </ul>
+            <div class="day-note">
+              <h4>唐津くんち三日怎麼選？</h4>
+              <p>官方日程：<strong>11/2 宵曳山</strong>（夜）· <strong>11/3 御旅所神幸</strong>（白天，含西の浜沙灘）· <strong>11/4 翌日祭／町廻り</strong>（白天）。本行程看宵曳山；11/3 改去熱氣球，11/4 返港，故不看後兩天。</p>
+            </div>
             <div class="day-booking">
               <h4>當日交通</h4>
               <p>通常不需事先劃位；出發前用路線搜尋確認班次即可。</p>
               <p class="booking-links">
                 <a href="https://japantravel.navitime.com/en/" target="_blank" rel="noopener">NAVITIME 時刻搜尋</a>
                 <a href="https://world.jorudan.co.jp/mln/en/" target="_blank" rel="noopener">Jorudan 路線搜尋</a>
+                <a href="https://www.city.karatsu.lg.jp/page/4344.html" target="_blank" rel="noopener">唐津市官方日程</a>
               </p>
             </div>
           </article>
 
           <article class="day-panel" role="tabpanel" id="panel-day5" aria-labelledby="tab-day5" data-day="day5" hidden>
             <div class="day-head">
-              <span class="day-num">Day 5</span>
               <time datetime="2026-11-03">11 月 3 日 · 周二 · 祝</time>
             </div>
             <h3>佐賀國際熱氣球節 &amp; 和牛慶祝宴</h3>
@@ -240,14 +308,14 @@
             </figure>
             <ul>
               <li><strong>08:30–09:00</strong> 博多站 JR 特急至<strong>佐賀站</strong>（請預先劃位），再轉約 5 分到<strong>バルーンさが</strong>（約 ¥240）。</li>
-              <li><strong>09:30–13:00</strong> 會場漫步、看氣球與攤位（入場一般免費）；未必趕上最早升空，但節慶最後一天仍有活動氣氛。</li>
-              <li><strong>13:30–14:30</strong> 返回博多；飯店短暫休息。</li>
+              <li><strong>09:30–13:00</strong> 會場漫步、看<strong>バルーンファンタジア</strong>（變形氣球約 9:00 起）與攤位；清晨競技起飛約 7:00，較晚出發通常趕不上，下午另有競技／キー・グラブ・レース（約 15:00）。</li>
+              <li><strong>13:30–14:30</strong> 返回博多；飯店短暫休息。（若想看下午起飛可延後回程。）</li>
               <li><strong>15:00–17:00</strong> 運河城或近飯店輕鬆採購（可選）。</li>
-              <li><strong>18:30</strong> 預約頂級佐賀牛／黑毛和牛燒肉（文化之日，務必提早訂）。</li>
+              <li><strong>18:30</strong> 預約頂級佐賀牛／黑毛和牛燒肉（文化之日，務必提早訂）。夜間係留「ラ・モンゴルフィエ」約 18:30 在會場，與晚餐衝突，本行程不安排。</li>
             </ul>
             <div class="day-note">
               <h4>バルーンさが在哪？</h4>
-              <p>熱氣球節<strong>臨時站</strong>，佐賀市<strong>嘉瀬川河川敷</strong>會場旁；出站步行約 1 分。2026 約 <strong>10/30–11/3</strong> 營業，Day 5 是最後一天。週末／祝日開車易塞，建議 JR。</p>
+              <p>熱氣球節<strong>臨時站</strong>，佐賀市<strong>嘉瀬川河川敷</strong>會場旁；出站步行約 1 分。2026 約 <strong>10/30–11/3</strong> 營業，11/3 是最後一天。週末／祝日開車易塞，建議 JR。</p>
               <p class="booking-links">
                 <a href="https://www.google.com/maps?q=33.2578,130.249" target="_blank" rel="noopener">在地圖上看位置</a>
                 <a href="https://www.sibf.jp/access/train.html" target="_blank" rel="noopener">大會交通說明</a>
@@ -266,7 +334,6 @@
 
           <article class="day-panel" role="tabpanel" id="panel-day6" aria-labelledby="tab-day6" data-day="day6" hidden>
             <div class="day-head">
-              <span class="day-num">Day 6</span>
               <time datetime="2026-11-04">11 月 4 日 · 周三</time>
             </div>
             <h3>退房與返航香港</h3>
@@ -294,89 +361,8 @@
               </ol>
             </div>
           </div>
-          <p class="map-caption" id="map-caption">Day 1：福岡機場 → 飯店 → 中洲／川端通早期夜散策。</p>
+          <p class="map-caption" id="map-caption">10/30：機場計程車 → 飯店 → 步行至中洲川端夜散策。</p>
         </div>
-      </div>
-    </section>
-
-    <section id="prep" class="section prep">
-      <div class="section-inner">
-        <h2>出發準備</h2>
-        <p class="section-lede">10 月底至 11 月初福岡天氣與行李清單（含長輩友善提醒）。</p>
-
-        <div class="prep-block">
-          <h3>氣溫大概多少？</h3>
-          <p>行程落在晚秋交界，平年約：</p>
-          <ul class="prep-list">
-            <li><strong>10 月底（Day 1–2）</strong>：白天約 <strong>20–23°C</strong>，早晚約 <strong>13–16°C</strong></li>
-            <li><strong>11 月初（Day 3–6）</strong>：白天約 <strong>18–21°C</strong>，早晚約 <strong>11–14°C</strong></li>
-            <li><strong>Day 5 熱氣球</strong>：河畔會場較涼、有風，體感可到約 <strong>10–14°C</strong>，務必多穿一層</li>
-            <li>約每 3 天有 1 天左右可能下雨；出發前 2–3 天再看一次天氣預報</li>
-          </ul>
-        </div>
-
-        <div class="prep-block">
-          <h3>穿什麼／帶什麼</h3>
-          <ul class="prep-list">
-            <li><strong>疊穿為主</strong>：長袖／薄毛衣＋可脫的外套（風衣、薄羽絨或外套一件）</li>
-            <li><strong>長褲</strong>：市區與近郊步行都適合；避免只靠短褲</li>
-            <li><strong>舒適步行鞋</strong>：柳川上下船、太宰府參道、唐津夜間站立都要走</li>
-            <li><strong>摺疊雨傘或薄雨衣</strong>：一人一把最穩</li>
-            <li><strong>薄圍巾／頸巾</strong>：給媽媽與 Day 2 清晨用</li>
-            <li><strong>小型背包</strong>：白天裝外套、水、藥、備用電池</li>
-          </ul>
-        </div>
-
-        <div class="prep-block">
-          <h3>行程專用小物</h3>
-          <ul class="prep-list">
-            <li><strong>Day 2 川下り</strong>：薄外套（水上較涼）；預約確認截圖</li>
-            <li><strong>Day 5 熱氣球</strong>：保暖層、帽子或耳罩、行動電源；會場空曠，可帶輕便坐墊（選配）</li>
-            <li><strong>Day 4 宵ヤマ</strong>：夜間站立圍觀，多一件外套；預留茶室休息時間</li>
-            <li><strong>藥品</strong>：常用藥、腸胃藥、膠布；長輩多備一件薄外套禦寒</li>
-            <li><strong>證件與票務</strong>：護照、JR／船預約確認、餐廳訂位、信用卡＋約 ¥40,000–50,000 現金</li>
-            <li><strong>插頭</strong>：日本是 A 型兩腳扁插，電壓 100V；港產電器多數可直用（注意變壓器需求）</li>
-          </ul>
-        </div>
-
-        <div class="prep-block">
-          <h3>出發前 checklist</h3>
-          <ul class="prep-list prep-check">
-            <li>Day 2 柳川川下り 10:40 班預約</li>
-            <li>Day 2 水炊き、Day 5 和牛餐廳預約</li>
-            <li>Day 5 JR 特急（博多↔佐賀）網上劃位</li>
-            <li>下載 GO／DiDi（叫車）、離線地圖或 NAVITIME</li>
-            <li>確認飯店地址日文：福岡市博多区綱場町 8-29 HOTEL Lumia HAKATA</li>
-            <li>出發前再查福岡天氣預報，微調外套厚度</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="tips" class="section tips">
-      <div class="section-inner">
-        <h2>實用小貼士</h2>
-        <p class="section-lede">現金、支付方式與出發前訂位提醒。</p>
-        <ul class="tip-list">
-          <li>
-            <h3>建議帶多少現金</h3>
-            <p>三人 6 天建議約 <strong>¥40,000–50,000</strong>（約 HK$2,000–2,600）。主要預留計程車、屋台、小店與備用；JR 網上票、川下り預約、水炊き／和牛、連鎖店與 Mandarake 等多可刷卡。</p>
-            <p>若很習慣刷卡＋交通 IC，現金可減至約 <strong>¥30,000</strong>，但仍建議留現金給屋台與少數只收現的車。</p>
-          </li>
-          <li>
-            <h3>計程車怎麼付</h3>
-            <p>福岡多數計程車收<strong>現金</strong>、<strong>信用卡</strong>（Visa／Mastercard／JCB／Amex 等）、<strong>交通 IC</strong>（SUGOCA、nimoca、Suica 等；八達通不行），以及 PayPay／Alipay／WeChat Pay 等 QR。每台車不完全一樣，上車可問「カード大丈夫ですか？」或看車內標誌。</p>
-            <p>機場↔飯店這類車程，大公司車刷卡較齊；仍建議備 <strong>¥3,000–5,000</strong> 現金以防萬一。用 GO／DiDi 叫車常可事先綁卡。</p>
-          </li>
-          <li>
-            <h3>機場計程車價錢</h3>
-            <p>單程約 ¥2,100–2,500（約 HK$105–125），三人分攤每人約 HK$35–42，比接駁＋地鐵省時約 25 分鐘，免扛行李。</p>
-          </li>
-          <li>
-            <h3>提前劃位與訂位</h3>
-            <p>到「每日行程」選對應日子可看到當日預約連結；Day 2 水炊き與 Day 5 和牛燒肉請另於網上預約餐廳。</p>
-          </li>
-        </ul>
       </div>
     </section>
   </main>

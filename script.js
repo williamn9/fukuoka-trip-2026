@@ -11,7 +11,8 @@ window.addEventListener("scroll", onScroll, { passive: true });
 const places = {
   airport: { name: "福岡機場", lat: 33.5859, lng: 130.451, note: "FUK 國際線" },
   hotel: { name: "HOTEL Lumia HAKATA", lat: 33.5964, lng: 130.4078, note: "五晚連住基地" },
-  nakasu: { name: "中洲／川端通", lat: 33.5934, lng: 130.4054, note: "屋台與夜散策" },
+  hakata: { name: "JR 博多駅", lat: 33.5897, lng: 130.4207, note: "JR 特急出發站" },
+  nakasu: { name: "中洲川端駅", lat: 33.5935, lng: 130.4058, note: "地下鐵空港線／夜散策起點" },
   canalCity: { name: "博多運河城", lat: 33.5897, lng: 130.411, note: "輕鬆採購" },
   balloonSaga: {
     name: "バルーンさが（臨時站）",
@@ -19,11 +20,23 @@ const places = {
     lng: 130.249,
     note: "嘉瀬川河川敷・會場旁；節慶期間才營業",
   },
+  saga: { name: "JR 佐賀駅", lat: 33.2642, lng: 130.2967, note: "轉往バルーンさが" },
+  yanagawaStation: {
+    name: "西鐵柳川駅",
+    lat: 33.1608,
+    lng: 130.4029,
+    note: "轉短程計程車至松月碼頭",
+  },
   yanagawa: { name: "柳川松月碼頭", lat: 33.1635, lng: 130.4058, note: "川下り遊船" },
   dazaifu: { name: "太宰府天滿宮", lat: 33.5214, lng: 130.5348, note: "參道與梅枝餅" },
-  karatsu: { name: "唐津", lat: 33.4504, lng: 129.9688, note: "曳山祭宵ヤマ" },
+  karatsu: { name: "唐津駅", lat: 33.4504, lng: 129.9688, note: "曳山祭宵ヤマ" },
   ohori: { name: "大濠公園", lat: 33.586, lng: 130.3794, note: "湖畔漫步" },
-  tenjin: { name: "天神", lat: 33.5902, lng: 130.4017, note: "地下街、伴手禮、レトロ遊戲店" },
+  tenjin: {
+    name: "西鐵福岡（天神）駅",
+    lat: 33.5902,
+    lng: 130.4017,
+    note: "西鐵特急／地下街・レトロ遊戲",
+  },
   mandarake: {
     name: "Mandarake 福岡",
     lat: 33.5895,
@@ -34,11 +47,14 @@ const places = {
 
 const shortLabels = {
   airport: "機場",
-  hotel: "博多",
-  nakasu: "中洲",
+  hotel: "飯店",
+  hakata: "博多",
+  nakasu: "川端",
   canalCity: "運河",
-  balloonSaga: "佐賀",
-  yanagawa: "柳川",
+  balloonSaga: "會場",
+  saga: "佐賀",
+  yanagawaStation: "柳川站",
+  yanagawa: "碼頭",
   dazaifu: "太宰府",
   karatsu: "唐津",
   ohori: "大濠",
@@ -46,24 +62,33 @@ const shortLabels = {
   mandarake: "萬代",
 };
 
+const dateLabels = {
+  day1: "10/30",
+  day2: "10/31",
+  day3: "11/1",
+  day4: "11/2",
+  day5: "11/3",
+  day6: "11/4",
+};
+
 const routeMeta = {
   day1: {
-    caption: "Day 1：福岡機場 → 飯店 → 中洲／川端通早期夜散策。",
+    caption: "10/30：機場計程車 → 飯店 → 步行至中洲川端夜散策。",
   },
   day2: {
-    caption: "Day 2：天神 → 柳川川下り → 返回博多用水炊き晚餐。",
+    caption: "10/31：飯店 → 西鐵天神站 → 柳川 → 返回飯店用水炊き。",
   },
   day3: {
-    caption: "Day 3：太宰府 → 大濠公園 → 天神／大名レトロ遊戲。",
+    caption: "11/1：飯店 → 天神轉乘 → 太宰府 → 大濠 → 天神／大名。",
   },
   day4: {
-    caption: "Day 4：中洲川端直達唐津，夜間宵ヤマ後返回博多。",
+    caption: "11/2：飯店 → 中洲川端駅 → 唐津宵ヤマ → 返回飯店。",
   },
   day5: {
-    caption: "Day 5：博多 → 佐賀バルーンさが（較晚出發）→ 返回和牛慶祝晚餐。",
+    caption: "11/3：飯店 → 博多駅 → 佐賀／バルーンさが → 返回飯店。",
   },
   day6: {
-    caption: "Day 6：飯店退房，計程車直達福岡機場返港。",
+    caption: "11/4：飯店計程車直達福岡機場返港。",
   },
 };
 
@@ -75,23 +100,23 @@ const routes = {
   },
   day2: {
     color: "#b86a2e",
-    path: ["tenjin", "yanagawa", "hotel"],
-    markers: ["tenjin", "yanagawa", "hotel"],
+    path: ["hotel", "tenjin", "yanagawaStation", "yanagawa", "yanagawaStation", "tenjin", "hotel"],
+    markers: ["hotel", "tenjin", "yanagawaStation", "yanagawa"],
   },
   day3: {
     color: "#2f4a5c",
-    path: ["hotel", "dazaifu", "ohori", "tenjin", "mandarake", "hotel"],
-    markers: ["hotel", "dazaifu", "ohori", "tenjin", "mandarake"],
+    path: ["hotel", "tenjin", "dazaifu", "ohori", "tenjin", "mandarake", "hotel"],
+    markers: ["hotel", "tenjin", "dazaifu", "ohori", "mandarake"],
   },
   day4: {
     color: "#8a4f2a",
-    path: ["nakasu", "karatsu", "hotel"],
-    markers: ["nakasu", "karatsu", "hotel"],
+    path: ["hotel", "nakasu", "karatsu", "nakasu", "hotel"],
+    markers: ["hotel", "nakasu", "karatsu"],
   },
   day5: {
     color: "#3d6b7a",
-    path: ["hotel", "balloonSaga", "hotel", "canalCity"],
-    markers: ["hotel", "balloonSaga", "canalCity"],
+    path: ["hotel", "hakata", "saga", "balloonSaga", "saga", "hakata", "hotel", "canalCity"],
+    markers: ["hotel", "hakata", "saga", "balloonSaga", "canalCity"],
   },
   day6: {
     color: "#5c6f7d",
@@ -131,6 +156,17 @@ const mapStyles = [
 let activeDay = "day1";
 let mapRouteController = null;
 
+const tabCopy = {
+  info: {
+    title: "行程資訊",
+    lede: "總覽、航班住宿、出發準備與實用貼士。",
+  },
+  day: {
+    title: "每日行程",
+    lede: "頂部選日期，只顯示當日行程、路線與預約連結。",
+  },
+};
+
 function toLatLng(place) {
   return { lat: place.lat, lng: place.lng };
 }
@@ -163,7 +199,8 @@ function markerIcon(label, isHub = false) {
 }
 
 function selectDay(dayKey, { scroll = false } = {}) {
-  if (!routes[dayKey]) return;
+  const isInfo = dayKey === "info";
+  if (!isInfo && !routes[dayKey]) return;
   activeDay = dayKey;
 
   document.querySelectorAll(".day-tab").forEach((tab) => {
@@ -178,13 +215,23 @@ function selectDay(dayKey, { scroll = false } = {}) {
     panel.hidden = !selected;
   });
 
-  const caption = document.getElementById("map-caption");
-  if (caption && routeMeta[dayKey]) {
-    caption.textContent = routeMeta[dayKey].caption;
-  }
+  const title = document.getElementById("days-title");
+  const lede = document.getElementById("days-lede");
+  const copy = isInfo ? tabCopy.info : tabCopy.day;
+  if (title) title.textContent = copy.title;
+  if (lede) lede.textContent = copy.lede;
 
-  if (mapRouteController) {
-    mapRouteController(dayKey);
+  const mapBlock = document.querySelector(".day-map-block");
+  if (mapBlock) mapBlock.hidden = isInfo;
+
+  if (!isInfo) {
+    const caption = document.getElementById("map-caption");
+    if (caption && routeMeta[dayKey]) {
+      caption.textContent = routeMeta[dayKey].caption;
+    }
+    if (mapRouteController) {
+      mapRouteController(dayKey);
+    }
   }
 
   if (scroll) {
@@ -200,6 +247,7 @@ function initDayTabs() {
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
       selectDay(tab.dataset.day, { scroll: true });
+      history.replaceState(null, "", `#${tab.dataset.day}`);
     });
   });
 
@@ -213,11 +261,22 @@ function initDayTabs() {
           : tabs[(index - 1 + tabs.length) % tabs.length];
       next.focus();
       selectDay(next.dataset.day, { scroll: true });
+      history.replaceState(null, "", `#${next.dataset.day}`);
+    });
+  });
+
+  document.querySelectorAll("[data-select-day]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const key = link.getAttribute("data-select-day");
+      if (!key) return;
+      event.preventDefault();
+      selectDay(key, { scroll: true });
+      history.replaceState(null, "", `#${key}`);
     });
   });
 
   const hashDay = (location.hash || "").replace(/^#/, "");
-  if (routes[hashDay]) {
+  if (hashDay === "info" || routes[hashDay]) {
     activeDay = hashDay;
   }
 
@@ -248,13 +307,13 @@ window.initTripMap = function initTripMap() {
     position: toLatLng(places.hotel),
     map,
     title: places.hotel.name,
-    icon: markerIcon("博多", true),
+    icon: markerIcon("飯店", true),
     zIndex: 1000,
   });
 
   hubMarker.addListener("click", () => {
     info.setContent(
-      `<strong>${places.hotel.name}</strong><div>${places.hotel.note}</div>`
+      `<strong>${places.hotel.name}</strong><div>住宿飯店 · ${places.hotel.note}</div>`
     );
     info.open({ map, anchor: hubMarker });
   });
@@ -283,10 +342,7 @@ window.initTripMap = function initTripMap() {
 
         marker.addListener("click", () => {
           info.setContent(
-            `<strong>${place.name}</strong><div>${dayKey.replace(
-              "day",
-              "Day "
-            )} · ${place.note}</div>`
+            `<strong>${place.name}</strong><div>${dateLabels[dayKey] || dayKey} · ${place.note}</div>`
           );
           info.open({ map, anchor: marker });
         });
@@ -333,7 +389,7 @@ window.initTripMap = function initTripMap() {
 
   const revealMap = () => {
     google.maps.event.trigger(map, "resize");
-    setRoute(activeDay);
+    setRoute(activeDay === "info" ? "day1" : activeDay);
   };
 
   if ("IntersectionObserver" in window) {

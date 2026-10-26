@@ -53,7 +53,7 @@ a {
   inset: 0 0 auto;
   z-index: 20;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 0.85rem 1.25rem;
   padding: 0.75rem clamp(1rem, 3.5vw, 2.5rem);
@@ -72,38 +72,10 @@ a {
 
 .logo {
   flex: 0 0 auto;
-  margin-top: 0.35rem;
   font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.05rem;
   letter-spacing: 0.08em;
-}
-
-.header-navs {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.45rem;
-  min-width: 0;
-}
-
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.3rem 0.95rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.nav a {
-  opacity: 0.78;
-  transition: opacity 0.25s var(--ease);
-}
-
-.nav a:hover,
-.nav a:focus-visible {
-  opacity: 1;
 }
 
 .day-nav {
@@ -111,9 +83,13 @@ a {
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 0.35rem;
+  min-width: 0;
 }
 
 .site-header .day-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   min-height: 2rem;
   padding: 0.3rem 0.7rem;
   border: 1px solid rgba(250, 252, 253, 0.4);
@@ -388,8 +364,31 @@ a {
   color: var(--ink);
 }
 
-.logistics {
-  background: linear-gradient(180deg, transparent, rgba(74, 109, 130, 0.08) 30%, transparent);
+.info-block {
+  margin-top: 2.75rem;
+  padding-top: 0.35rem;
+}
+
+.info-block:first-of-type {
+  margin-top: 0;
+}
+
+.day-panel[data-day="info"] .info-block:first-child {
+  margin-top: 0;
+}
+
+.info-block > h3 {
+  margin: 0 0 0.55rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.4vw, 1.7rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.info-lede {
+  margin: 0 0 1.5rem;
+  max-width: 36ch;
+  color: var(--ink-soft);
 }
 
 .split {
@@ -405,12 +404,13 @@ a {
   border-top: 1px solid var(--line);
 }
 
-.log-block h3,
-.hotel h3,
-.tip-list h3 {
+.log-block h4,
+.hotel h4,
+.tip-list h4,
+.prep-block h4 {
   margin: 0 0 0.65rem;
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
 }
 
@@ -470,23 +470,15 @@ a {
 }
 
 .day-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 0.55rem 1rem;
   margin-bottom: 0.45rem;
 }
 
-.day-num {
+.day-head time {
   font-family: var(--font-display);
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--lantern);
   letter-spacing: 0.04em;
-}
-
-.day-head time {
-  font-size: 0.92rem;
-  color: var(--ink-soft);
 }
 
 .day-panel h3 {
@@ -582,20 +574,9 @@ a {
   font-weight: 700;
 }
 
-.prep {
-  background: linear-gradient(180deg, transparent, rgba(74, 109, 130, 0.06) 40%, transparent);
-}
-
 .prep-block {
   padding: 1.25rem 0 0.35rem;
   border-top: 1px solid var(--line);
-}
-
-.prep-block h3 {
-  margin: 0 0 0.65rem;
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 700;
 }
 
 .prep-block > p {
@@ -639,7 +620,7 @@ a {
   border-radius: 0.15rem;
 }
 
-.tips .tip-list,
+.tip-list,
 .booking-list {
   list-style: none;
   margin: 0;
@@ -664,8 +645,7 @@ a {
   margin-top: 0.55rem;
 }
 
-.booking-list h3,
-.tip-list h3 {
+.booking-list h3 {
   margin: 0 0 0.65rem;
   font-family: var(--font-display);
   font-size: 1.25rem;
@@ -765,27 +745,17 @@ a {
     align-items: stretch;
   }
 
-  .header-navs {
-    flex: 1 1 100%;
-    align-items: stretch;
-  }
-
-  .nav,
   .day-nav {
+    flex: 1 1 100%;
     justify-content: flex-start;
   }
 
   #days {
-    scroll-margin-top: 8.5rem;
+    scroll-margin-top: 6.5rem;
   }
 }
 
 @media (max-width: 560px) {
-  .nav {
-    gap: 0.3rem 0.75rem;
-    font-size: 0.82rem;
-  }
-
   .site-header .day-tab {
     font-size: 0.75rem;
     padding: 0.28rem 0.55rem;
