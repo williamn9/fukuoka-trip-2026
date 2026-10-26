@@ -13,13 +13,22 @@
 <body>
   <header class="site-header">
     <a class="logo" href="#top">福岡 · 2026</a>
-    <nav class="nav" aria-label="主要導覽">
-      <a href="#overview">總覽</a>
-      <a href="#prep">準備</a>
-      <a href="#flights">航班</a>
-      <a href="#days">行程</a>
-      <a href="#tips">貼士</a>
-    </nav>
+    <div class="header-navs">
+      <nav class="nav" aria-label="主要導覽">
+        <a href="#overview">總覽</a>
+        <a href="#prep">準備</a>
+        <a href="#flights">航班</a>
+        <a href="#tips">貼士</a>
+      </nav>
+      <nav class="day-nav" role="tablist" aria-label="每日行程">
+        <button type="button" class="day-tab is-active" role="tab" id="tab-day1" aria-controls="panel-day1" aria-selected="true" data-day="day1">Day 1</button>
+        <button type="button" class="day-tab" role="tab" id="tab-day2" aria-controls="panel-day2" aria-selected="false" data-day="day2">Day 2</button>
+        <button type="button" class="day-tab" role="tab" id="tab-day3" aria-controls="panel-day3" aria-selected="false" data-day="day3">Day 3</button>
+        <button type="button" class="day-tab" role="tab" id="tab-day4" aria-controls="panel-day4" aria-selected="false" data-day="day4">Day 4</button>
+        <button type="button" class="day-tab" role="tab" id="tab-day5" aria-controls="panel-day5" aria-selected="false" data-day="day5">Day 5</button>
+        <button type="button" class="day-tab" role="tab" id="tab-day6" aria-controls="panel-day6" aria-selected="false" data-day="day6">Day 6</button>
+      </nav>
+    </div>
   </header>
 
   <main id="top">
@@ -96,16 +105,7 @@
     <section id="days" class="section days">
       <div class="section-inner">
         <h2>每日行程</h2>
-        <p class="section-lede">選擇日期，只顯示當日行程、路線與預約連結。</p>
-
-        <div class="day-tabs" role="tablist" aria-label="選擇行程日">
-          <button type="button" class="day-tab is-active" role="tab" id="tab-day1" aria-controls="panel-day1" aria-selected="true" data-day="day1">Day 1</button>
-          <button type="button" class="day-tab" role="tab" id="tab-day2" aria-controls="panel-day2" aria-selected="false" data-day="day2">Day 2</button>
-          <button type="button" class="day-tab" role="tab" id="tab-day3" aria-controls="panel-day3" aria-selected="false" data-day="day3">Day 3</button>
-          <button type="button" class="day-tab" role="tab" id="tab-day4" aria-controls="panel-day4" aria-selected="false" data-day="day4">Day 4</button>
-          <button type="button" class="day-tab" role="tab" id="tab-day5" aria-controls="panel-day5" aria-selected="false" data-day="day5">Day 5</button>
-          <button type="button" class="day-tab" role="tab" id="tab-day6" aria-controls="panel-day6" aria-selected="false" data-day="day6">Day 6</button>
-        </div>
+        <p class="section-lede">頂部選 Day 1–6，只顯示當日行程、路線與預約連結。</p>
 
         <div class="day-panels">
           <article class="day-panel is-active" role="tabpanel" id="panel-day1" aria-labelledby="tab-day1" data-day="day1">

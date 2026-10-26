@@ -162,7 +162,7 @@ function markerIcon(label, isHub = false) {
   };
 }
 
-function selectDay(dayKey) {
+function selectDay(dayKey, { scroll = false } = {}) {
   if (!routes[dayKey]) return;
   activeDay = dayKey;
 
@@ -186,12 +186,21 @@ function selectDay(dayKey) {
   if (mapRouteController) {
     mapRouteController(dayKey);
   }
+
+  if (scroll) {
+    const daysSection = document.getElementById("days");
+    if (daysSection) {
+      daysSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
 }
 
 function initDayTabs() {
-  const tabs = document.querySelectorAll(".day-tab");
+  const tabs = Array.from(document.querySelectorAll(".day-tab"));
   tabs.forEach((tab) => {
-    tab.addEventListener("click", () => selectDay(tab.dataset.day));
+    tab.addEventListener("click", () => {
+      selectDay(tab.dataset.day, { scroll: true });
+    });
   });
 
   tabs.forEach((tab, index) => {
@@ -203,9 +212,14 @@ function initDayTabs() {
           ? tabs[(index + 1) % tabs.length]
           : tabs[(index - 1 + tabs.length) % tabs.length];
       next.focus();
-      selectDay(next.dataset.day);
+      selectDay(next.dataset.day, { scroll: true });
     });
   });
+
+  const hashDay = (location.hash || "").replace(/^#/, "");
+  if (routes[hashDay]) {
+    activeDay = hashDay;
+  }
 
   selectDay(activeDay);
 }
