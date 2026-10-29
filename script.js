@@ -9,7 +9,13 @@ onScroll();
 window.addEventListener("scroll", onScroll, { passive: true });
 
 const places = {
-  airport: { name: "福岡機場", lat: 33.5859, lng: 130.451, note: "FUK 國際線" },
+  airport: { name: "福岡機場國際線", lat: 33.5859, lng: 130.451, note: "FUK 國際線・入境" },
+  airportMetro: {
+    name: "地下鐵 福岡空港駅",
+    lat: 33.5972,
+    lng: 130.4478,
+    note: "國內線側・免費接駁巴士後轉空港線",
+  },
   hotel: { name: "HOTEL Lumia HAKATA", lat: 33.5964, lng: 130.4078, note: "五晚連住基地" },
   hakata: { name: "JR 博多駅", lat: 33.5897, lng: 130.4207, note: "JR 特急出發站" },
   nakasu: { name: "中洲川端駅", lat: 33.5935, lng: 130.4058, note: "地下鐵空港線／夜散策起點" },
@@ -58,7 +64,8 @@ const places = {
 };
 
 const shortLabels = {
-  airport: "機場",
+  airport: "國際",
+  airportMetro: "空港駅",
   hotel: "飯店",
   hakata: "博多",
   nakasu: "川端",
@@ -87,7 +94,8 @@ const dateLabels = {
 
 const routeMeta = {
   day1: {
-    caption: "10/30：機場計程車 → 飯店 → 步行至中洲川端夜散策。",
+    caption:
+      "10/30 大眾交通：國際線 → 免費接駁 → 福岡空港駅 → 中洲川端 → 飯店（亦可改計程車直達）。",
   },
   day2: {
     caption: "10/31：飯店 → 西鐵天神站 → 柳川 → 返回飯店用水炊き。",
@@ -109,8 +117,8 @@ const routeMeta = {
 const routes = {
   day1: {
     color: "#4a6d82",
-    path: ["airport", "hotel", "nakasu"],
-    markers: ["airport", "hotel", "nakasu"],
+    path: ["airport", "airportMetro", "nakasu", "hotel"],
+    markers: ["airport", "airportMetro", "nakasu", "hotel"],
   },
   day2: {
     color: "#b86a2e",
